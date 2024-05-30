@@ -16,7 +16,7 @@ The REST API documentation can be found [on docs.dagster-plus-rest.com](https://
 
 ```sh
 # install from the production repo
-pip install git+ssh://git@github.com/undefined/stainless-test.git
+pip install git+ssh://git@github.com/schrockn/stainless-test-python.git
 ```
 
 > [!NOTE]
@@ -201,9 +201,9 @@ report_asset_materialization = response.parse()  # get the object that `report_a
 print(report_asset_materialization)
 ```
 
-These methods return an [`APIResponse`](https://github.com/undefined/stainless-test/tree/main/src/dagster-plus-rest/_response.py) object.
+These methods return an [`APIResponse`](https://github.com/schrockn/stainless-test-python/tree/main/src/dagster-plus-rest/_response.py) object.
 
-The async client returns an [`AsyncAPIResponse`](https://github.com/undefined/stainless-test/tree/main/src/dagster-plus-rest/_response.py) with the same structure, the only difference being `await`able methods for reading the response content.
+The async client returns an [`AsyncAPIResponse`](https://github.com/schrockn/stainless-test-python/tree/main/src/dagster-plus-rest/_response.py) with the same structure, the only difference being `await`able methods for reading the response content.
 
 #### `.with_streaming_response`
 
@@ -290,7 +290,7 @@ This package generally follows [SemVer](https://semver.org/spec/v2.0.0.html) con
 
 We take backwards-compatibility seriously and work hard to ensure you can rely on a smooth upgrade experience.
 
-We are keen for your feedback; please open an [issue](https://www.github.com/undefined/stainless-test/issues) with questions, bugs, or suggestions.
+We are keen for your feedback; please open an [issue](https://www.github.com/schrockn/stainless-test-python/issues) with questions, bugs, or suggestions.
 
 ## Requirements
 
