@@ -637,7 +637,7 @@ class TestDagsterPlusRest:
         respx_mock.post("/v1/report_asset_materialization").mock(side_effect=httpx.TimeoutException("Test timeout error"))
 
         with pytest.raises(APITimeoutError):
-            self.client.post("/v1/report_asset_materialization", body=cast(object, dict(asset_key="string", partition="string")), cast_to=httpx.Response, options={"headers": {RAW_RESPONSE_HEADER: "stream"}})
+            self.client.post("/v1/report_asset_materialization", body=cast(object, dict(asset_key="string")), cast_to=httpx.Response, options={"headers": {RAW_RESPONSE_HEADER: "stream"}})
 
         assert _get_open_connections(self.client) == 0
 
@@ -647,7 +647,7 @@ class TestDagsterPlusRest:
         respx_mock.post("/v1/report_asset_materialization").mock(return_value=httpx.Response(500))
 
         with pytest.raises(APIStatusError):
-            self.client.post("/v1/report_asset_materialization", body=cast(object, dict(asset_key="string", partition="string")), cast_to=httpx.Response, options={"headers": {RAW_RESPONSE_HEADER: "stream"}})
+            self.client.post("/v1/report_asset_materialization", body=cast(object, dict(asset_key="string")), cast_to=httpx.Response, options={"headers": {RAW_RESPONSE_HEADER: "stream"}})
 
         assert _get_open_connections(self.client) == 0
 class TestAsyncDagsterPlusRest:
@@ -1240,7 +1240,7 @@ class TestAsyncDagsterPlusRest:
         respx_mock.post("/v1/report_asset_materialization").mock(side_effect=httpx.TimeoutException("Test timeout error"))
 
         with pytest.raises(APITimeoutError):
-            await self.client.post("/v1/report_asset_materialization", body=cast(object, dict(asset_key="string", partition="string")), cast_to=httpx.Response, options={"headers": {RAW_RESPONSE_HEADER: "stream"}})
+            await self.client.post("/v1/report_asset_materialization", body=cast(object, dict(asset_key="string")), cast_to=httpx.Response, options={"headers": {RAW_RESPONSE_HEADER: "stream"}})
 
         assert _get_open_connections(self.client) == 0
 
@@ -1250,6 +1250,6 @@ class TestAsyncDagsterPlusRest:
         respx_mock.post("/v1/report_asset_materialization").mock(return_value=httpx.Response(500))
 
         with pytest.raises(APIStatusError):
-            await self.client.post("/v1/report_asset_materialization", body=cast(object, dict(asset_key="string", partition="string")), cast_to=httpx.Response, options={"headers": {RAW_RESPONSE_HEADER: "stream"}})
+            await self.client.post("/v1/report_asset_materialization", body=cast(object, dict(asset_key="string")), cast_to=httpx.Response, options={"headers": {RAW_RESPONSE_HEADER: "stream"}})
 
         assert _get_open_connections(self.client) == 0

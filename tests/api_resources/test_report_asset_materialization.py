@@ -26,7 +26,6 @@ class TestReportAssetMaterialization:
     def test_method_create(self, client: DagsterPlusRest) -> None:
         report_asset_materialization = client.report_asset_materialization.create(
             asset_key="string",
-            partition="string",
         )
         assert report_asset_materialization is None
 
@@ -34,9 +33,9 @@ class TestReportAssetMaterialization:
     def test_method_create_with_all_params(self, client: DagsterPlusRest) -> None:
         report_asset_materialization = client.report_asset_materialization.create(
             asset_key="string",
-            partition="string",
             data_version="string",
             description="string",
+            partition="string",
         )
         assert report_asset_materialization is None
 
@@ -45,7 +44,6 @@ class TestReportAssetMaterialization:
 
         response = client.report_asset_materialization.with_raw_response.create(
             asset_key="string",
-            partition="string",
         )
 
         assert response.is_closed is True
@@ -57,7 +55,6 @@ class TestReportAssetMaterialization:
     def test_streaming_response_create(self, client: DagsterPlusRest) -> None:
         with client.report_asset_materialization.with_streaming_response.create(
             asset_key="string",
-            partition="string",
         ) as response :
             assert not response.is_closed
             assert response.http_request.headers.get('X-Stainless-Lang') == 'python'
@@ -74,7 +71,6 @@ class TestAsyncReportAssetMaterialization:
     async def test_method_create(self, async_client: AsyncDagsterPlusRest) -> None:
         report_asset_materialization = await async_client.report_asset_materialization.create(
             asset_key="string",
-            partition="string",
         )
         assert report_asset_materialization is None
 
@@ -82,9 +78,9 @@ class TestAsyncReportAssetMaterialization:
     async def test_method_create_with_all_params(self, async_client: AsyncDagsterPlusRest) -> None:
         report_asset_materialization = await async_client.report_asset_materialization.create(
             asset_key="string",
-            partition="string",
             data_version="string",
             description="string",
+            partition="string",
         )
         assert report_asset_materialization is None
 
@@ -93,7 +89,6 @@ class TestAsyncReportAssetMaterialization:
 
         response = await async_client.report_asset_materialization.with_raw_response.create(
             asset_key="string",
-            partition="string",
         )
 
         assert response.is_closed is True
@@ -105,7 +100,6 @@ class TestAsyncReportAssetMaterialization:
     async def test_streaming_response_create(self, async_client: AsyncDagsterPlusRest) -> None:
         async with async_client.report_asset_materialization.with_streaming_response.create(
             asset_key="string",
-            partition="string",
         ) as response :
             assert not response.is_closed
             assert response.http_request.headers.get('X-Stainless-Lang') == 'python'

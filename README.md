@@ -33,7 +33,6 @@ client = DagsterPlusRest()
 
 response = client.report_asset_materialization.create(
     asset_key="string",
-    partition="string",
 )
 ```
 
@@ -50,7 +49,6 @@ client = AsyncDagsterPlusRest()
 async def main() -> None:
   response = await client.report_asset_materialization.create(
       asset_key="string",
-      partition="string",
   )
 
 asyncio.run(main())
@@ -85,7 +83,6 @@ client = DagsterPlusRest()
 try:
     client.report_asset_materialization.create(
         asset_key="string",
-        partition="string",
     )
 except dagster-plus-rest.APIConnectionError as e:
     print("The server could not be reached")
@@ -131,7 +128,6 @@ client = DagsterPlusRest(
 # Or, configure per-request:
 client.with_options(max_retries = 5).report_asset_materialization.create(
     asset_key="string",
-    partition="string",
 )
 ```
 
@@ -157,7 +153,6 @@ client = DagsterPlusRest(
 # Override per-request:
 client.with_options(timeout = 5.0).report_asset_materialization.create(
     asset_key="string",
-    partition="string",
 )
 ```
 
@@ -199,7 +194,6 @@ from dagster-plus-rest import DagsterPlusRest
 client = DagsterPlusRest()
 response = client.report_asset_materialization.with_raw_response.create(
     asset_key="string",
-    partition="string",
 )
 print(response.headers.get('X-My-Header'))
 
@@ -220,7 +214,6 @@ To stream the response body, use `.with_streaming_response` instead, which requi
 ```python
 with client.report_asset_materialization.with_streaming_response.create(
     asset_key="string",
-    partition="string",
 ) as response :
     print(response.headers.get('X-My-Header'))
 

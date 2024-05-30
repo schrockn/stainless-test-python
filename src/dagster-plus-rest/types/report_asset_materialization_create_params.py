@@ -16,8 +16,8 @@ __all__ = ["ReportAssetMaterializationCreateParams"]
 class ReportAssetMaterializationCreateParams(TypedDict, total=False):
     asset_key: Required[str]
 
-    partition: Required[str]
-
     data_version: str
 
     description: str
+
+    partition: str
