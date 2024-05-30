@@ -48,9 +48,9 @@ class ReportAssetMaterializationResource(SyncAPIResource):
         self,
         *,
         asset_key: str,
-        partition: str,
         data_version: str | NotGiven = NOT_GIVEN,
         description: str | NotGiven = NOT_GIVEN,
+        partition: str | NotGiven = NOT_GIVEN,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
@@ -76,9 +76,9 @@ class ReportAssetMaterializationResource(SyncAPIResource):
             body=maybe_transform(
                 {
                     "asset_key": asset_key,
-                    "partition": partition,
                     "data_version": data_version,
                     "description": description,
+                    "partition": partition,
                 },
                 report_asset_materialization_create_params.ReportAssetMaterializationCreateParams,
             ),
@@ -102,9 +102,9 @@ class AsyncReportAssetMaterializationResource(AsyncAPIResource):
         self,
         *,
         asset_key: str,
-        partition: str,
         data_version: str | NotGiven = NOT_GIVEN,
         description: str | NotGiven = NOT_GIVEN,
+        partition: str | NotGiven = NOT_GIVEN,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
@@ -130,9 +130,9 @@ class AsyncReportAssetMaterializationResource(AsyncAPIResource):
             body=await async_maybe_transform(
                 {
                     "asset_key": asset_key,
-                    "partition": partition,
                     "data_version": data_version,
                     "description": description,
+                    "partition": partition,
                 },
                 report_asset_materialization_create_params.ReportAssetMaterializationCreateParams,
             ),
